@@ -1,0 +1,299 @@
+body {
+	margin: 0;
+}
+
+.overview {
+	&__list {
+		list-style-type: none;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__item {
+
+	}
+
+	&__label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border: 2px solid black;
+		border-radius: 100%;
+		width: 50px;
+		height: 50px;
+
+		& * {
+			font-size: 1rem;
+			margin: 0;
+		}
+	}
+
+	&__riser {
+		padding: 0;
+		list-style-type: none;
+
+		&__floor {
+			border-left: 2px solid red;
+			border-bottom: 2px solid red;
+
+			&__label {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.riser {
+	list-style-type: none; 
+	padding: 0;
+	display: flex; 
+	flex-direction: column;
+	min-height: 120px;
+	height: auto;
+	overflow-y: auto;
+	flex-grow: 1;
+	position: relative;
+
+	&__list {
+		padding: 0;
+		list-style-type: none;
+	}
+
+	&__label {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		border: 2px solid black;
+		border-radius: 100%;
+		width: 100px;
+		height: 100px;
+		align-items: center;
+		align-self: center;
+
+		&__top {
+			height: 50%;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 2px solid black;
+			width: 100%;
+		}
+
+		&__bottom {
+			height: 50%;
+			margin: 0;
+			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__label__form {
+		position: relative;
+		z-index: 3;
+		height: 60%;
+	}
+
+	&__label__input {
+		position: relative;
+		z-index: 3;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+	&__label__input::-webkit-inner-spin-button, 
+	&__label__input::-webkit-outer-spin-button { 
+	  -webkit-appearance: none; 
+	  margin: 0; 
+	}
+}
+
+.floor {
+	border-bottom: 2px solid red;
+	height: auto;
+	display: flex;
+	min-height: 120px;
+	position: relative;
+	padding-top: 40px;
+	// margin-top: 100px;
+
+	&__label {
+		margin: 0;
+		align-self: flex-end;
+	}
+
+	&--active {
+		background-color: #dfe6e9;
+
+		& .floor__menu__button--edit {
+			display: none;
+		}
+
+		& .floor__menu__button--delete {
+			display: inline-block;
+		}
+
+		& .floor__menu__button--clear {
+			display: inline-block;
+		}
+	}
+
+	&__list {
+		display: flex;
+		list-style-type: none;
+		padding: 0;
+		align-items: center;
+		margin-left: 100px;
+		flex-wrap: wrap;
+	}
+
+	&__menu {
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&__button {
+			display: none;
+		}
+
+		&__button--edit {
+			display: inline;
+		}
+	}
+}
+
+.fixture {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 20px;
+
+	* {
+		margin: 0;
+	}
+
+	&__name {
+		font-size: 1rem;
+	}
+}
+
+.floor__label__form {
+	align-self: flex-end;
+	display: flex;
+	flex-direction: column;
+
+	label {
+		font-size: 2rem;
+	}
+
+	input {
+		font-size: 2rem;
+	}
+}
+
+.focused {
+	position: fixed;
+	// border-radius: 2px;
+	overflow: hidden;
+	// border: 2px solid red;
+	/* for IE */
+    box-shadow: 0 0 0 1000px rgba(0,0,0,.3);
+    /* for real browsers */
+    box-shadow: 0 0 0 200vmax rgba(0,0,0,.3);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hidden {
+	display: none!important;
+}
+
+.editor {
+	display: flex;
+	position: relative;
+	overflow-y: hidden;
+	height: 100vh;
+}
+
+.floor-margin-helper {
+	margin-top: 100px;
+}
+
+.editing-area {
+	flex-grow: 1;
+	background-color: #f7f7f7;
+	box-sizing: border-box;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+
+.add-button {
+	min-height: 100px;
+	height: 100px;
+	width: 100px;
+	background-color: transparent;
+	border: none;
+	font-weight: bold;
+	align-self: flex-end;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.button--back {
+	height: 50px;
+	position: absolute;
+	// left: 50px;
+	top: 50px;
+	background-color: #f7f7f7;
+	border: none;
+	z-index: 4;
+	border-radius: 5px;
+}
+
+.sidebar {
+	width: 300px;
+	min-width: 300px;
+	position: relative;
+	top: 0;
+	overflow-y: scroll;
+
+	&__list {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+		padding: 0;
+		justify-content: space-evenly;
+		margin: 0;
+	}
+
+	&__item {
+		width: 45%;
+		height: 125px;
+		margin: 3px 0;
+	}
+}
+
+.item {
+
+	&__button {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__label {
+		font-size: 1rem;
+	}
+}
