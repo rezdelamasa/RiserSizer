@@ -41,7 +41,7 @@ _A live demo of the current version, as seen in the "Done" Section can be found 
   * _This will, for the meantime, be a way for users to save a copy of their completed work while the backend is worked on._
 * Warning message when the user leaves the page or refreshes. Just ensure that the user doesn't lose their work as there is not currently a way to save.
 
-_This list will be updated as progress is made, I can't foresee more any features until I start to progress through the to-do list._
+_This list will be updated as progress is made, I can't foresee any more features until I start to progress through the to-do list._
 
 ## Backend to-do (Won't happen until the front end is completed, which could be a while)
 
